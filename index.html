@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meu Ponto — Controle de Jornada</title>
+<meta name="description" content="Controle pessoal de ponto: horários, fotos do espelho e cálculo automático de jornada.">
+<meta name="theme-color" content="#2F6FED">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="app">
+  <nav class="barra-lateral" id="barraLateral">
+    <div class="marca"><span class="ponto-dot"></span> Meu Ponto</div>
+    <button class="nav-item" data-rota="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      <span>Dashboard</span>
+    </button>
+    <button class="nav-item" data-rota="novo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+      <span>Novo Dia</span>
+    </button>
+    <button class="nav-item" data-rota="calendario">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      <span>Calendário</span>
+    </button>
+    <button class="nav-item" data-rota="historico">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+      <span>Histórico</span>
+    </button>
+    <button class="nav-item" data-rota="exportar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+      <span>Exportar</span>
+    </button>
+    <button class="nav-item" data-rota="backup">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 7v5l3 3"/></svg>
+      <span>Backup</span>
+    </button>
+    <button class="nav-item" data-rota="config">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1 1.55V21a2 2 0 11-4 0v-.09a1.7 1.7 0 00-1-1.55 1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.7 1.7 0 00.34-1.87 1.7 1.7 0 00-1.55-1H3a2 2 0 110-4h.09a1.7 1.7 0 001.55-1 1.7 1.7 0 00-.34-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06a1.7 1.7 0 001.87.34H9a1.7 1.7 0 001-1.55V3a2 2 0 114 0v.09a1.7 1.7 0 001 1.55 1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06a1.7 1.7 0 00-.34 1.87V9a1.7 1.7 0 001.55 1H21a2 2 0 110 4h-.09a1.7 1.7 0 00-1.55 1z"/></svg>
+      <span>Configurações</span>
+    </button>
+    <div class="rodape-lateral">
+      <div class="status-salvo"><span class="bolha"></span> <span id="ultimoSalvamento">Salvo</span></div>
+      <div id="versaoApp">v1.0</div>
+    </div>
+  </nav>
+
+  <main class="conteudo" id="conteudo">
+    <!-- Views são renderizadas dinamicamente via app.js -->
+  </main>
+</div>
+
+<div id="camadaModal"></div>
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="vendor/xlsx.full.min.js"></script>
+<script src="vendor/jspdf.umd.min.js"></script>
+<script src="vendor/jspdf.plugin.autotable.min.js"></script>
+<script src="vendor/jszip.min.js"></script>
+
+<script src="js/db.js"></script>
+<script src="js/calc.js"></script>
+<script src="js/export.js"></script>
+<script src="js/ui-helpers.js"></script>
+<script src="js/view-wizard.js"></script>
+<script src="js/view-dashboard.js"></script>
+<script src="js/view-newday.js"></script>
+<script src="js/view-calendar.js"></script>
+<script src="js/view-history.js"></script>
+<script src="js/view-export.js"></script>
+<script src="js/view-backup.js"></script>
+<script src="js/view-settings.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
